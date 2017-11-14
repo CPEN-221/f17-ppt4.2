@@ -21,9 +21,10 @@ public class FormattedText {
 	 * @param line
 	 *            represents a line of text
 	 * @return true after the new line of text has been added to the existing
+	 *         except when line is null or "" in which case nothing is added and
+	 *         false is returned
 	 */
 	public boolean add(String line) {
-
 		if (line == null)
 			return false;
 		if (line.equals(""))
@@ -33,7 +34,6 @@ public class FormattedText {
 			firstLine = line;
 			lastLine = this;
 		} else {
-			// add a line between linegraphs
 			FormattedText newline = new FormattedText();
 			newline.firstLine = line;
 			lastLine.remainingText = newline;
@@ -46,8 +46,9 @@ public class FormattedText {
 	 * @return the number of lines in the FormattedText
 	 */
 	public int numlines() {
-		// TODO implement this
-		return 0;
+		// TODO: Implement this method
+		int cnt = 0;
+		return cnt;
 	}
 
 	@Override
